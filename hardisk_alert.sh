@@ -7,18 +7,25 @@
 # License    :  GNU General Public License, version 3 (GPLv3) #
 # License URI:  http://www.gnu.org/licenses/gpl-3.0.html      #
 #=============================================================#
-#echo "Harap install mailutils dan postfix dahulu"
+<<<<<<< HEAD
 #Variable
-email="boniw@getnada.com hardisk@getnada.com"
-namapartisi="/dev/nvme0n1p1"
-isistorage="90"
+email="boniw@getnada.com"
+partisi="/dev/nvme0n1p1"
+sudah="75"
+#Proses
+persen=$(df -h | grep "$partisi" | awk '{ print $5 }' | sed 's/%//g')
+if ((persen > sudah))
+=======
+echo "Harap install mailutils dan postfix dahulu"
+#Variable
+email="boniw@getnada.com"
+namapartisi="/dev/sda1"
+isistorage="60" #alert jika isi storage sudah mencapi 
 #Proses
 persen=$(df -h | grep "$namapartisi" | awk '{ print $5 }' | sed 's/%//g')
 if ((persen > isistorage))
+>>>>>>> d63eaac92d2c441a80a4c31ec504582f11e2b803
 then
-for address in $email; do
-echo "Storage at $(hostname -f) is nearly full" | mail -s "Roger, Roger, Your disk is nearly full !!! , Reached $isistorage Percent." $address
-#echo "hardisk bahaya, alert sudah di kirim ke $address"
-done
+echo "Storage at $(hostname -f) is nearly full" | mail -s "Roger, Roger, Your disk is nearly full!!!" "$email"
 fi
 

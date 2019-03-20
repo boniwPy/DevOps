@@ -307,3 +307,13 @@ print_status """Run \`${bold}sudo apt-get install -y ${NODEPKG}${normal}\` to in
 
 ## Defer setup until we have the complete script
 setup
+
+## Execute instaling nodeJS after update repo nodeJS from PPA to get the latest version
+cmd_exec 'sudo apt-get install nodejs'
+
+## Remote all version nodeJS if had been instaled before using past version
+cmd_exec 'sudo apt autoremove'
+
+## All success /// ^_- \\\ byebye Thanks
+print_status """ All success /// ^_- \\\ byebye Thanks """
+

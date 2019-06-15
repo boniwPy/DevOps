@@ -8,7 +8,7 @@ echo -e  "# License:      GNU General Public License, version 3 (GPLv3) #"
 echo -e  "# License URI:  http://www.gnu.org/licenses/gpl-3.0.html      #"
 echo -e  "#=============================================================#"
 echo -e "which folder will be changed the permision? : \n the format must like /etc/apache/ !!! "
-echo "masukan folder mana yang akan di rubah permision : "(mesti dalam format /etc/apache/)""
+echo "masukan folder mana yang akan di rubah permision : (mesti dalam format /etc/apache/)"
 read folder
 echo "masukan fol
 der mana yang akan di rubah permision : (mesti dalam format : 644) "

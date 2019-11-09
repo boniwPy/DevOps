@@ -8,7 +8,7 @@ echo -e  "# License:      GNU General Public License, version 3 (GPLv3) #"
 echo -e  "# License URI:  http://www.gnu.org/licenses/gpl-3.0.html      #"
 echo -e  "#=============================================================#"
 
-sudo su
+
 echo "masukan nama userbaru :"
 read user
 sudo adduser $user --disabled-password

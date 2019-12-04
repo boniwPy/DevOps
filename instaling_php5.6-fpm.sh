@@ -26,7 +26,7 @@ sudo apt-get install -y --allow-unauthenticated python-software-properties
 echo "Add Repository Ondrej/PHP"
 #sleep 3s
 for i in {3..1};do echo -n "$i." && sleep 1; done
-sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository -y ppa:ondrej/php
 
 echo "Update Added Repository Python-Software-Properties and Ondrej/PHP"
 #sleep 3s
@@ -60,8 +60,8 @@ sudo echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
 sudo a2dismod mpm_prefork 
 sudo a2enmod mpm_worker 
 sudo service apache2 graceful
-sudo apt-get install htop
-sudo apt-get install atop
+sudo apt-get install -y htop
+sudo apt-get install -y atop
 sudo a2enmod headers
 sudo a2enmod rewrite
 sudo a2enmod actions fastcgi alias

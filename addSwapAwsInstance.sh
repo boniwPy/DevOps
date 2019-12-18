@@ -1,11 +1,9 @@
 #/bin/bash
-echo "MAU DIBUAT SWAP BERAPA GIGA MAS BOYSSSS followed by [ENTER]:=> dalam bentuk 4000kb = 4GB"
-
-sudo fallocate -l $size /swapfile 
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile 
-sudo swapon /swapfile 
-
-/bin/dd if=/dev/zero of=/var/swap.1 bs=4M count=1028
-/sbin/mkswap /var/swap.1
-/sbin/swapon /var/swap.1
+echo "Berama giga ukuran yang akan di jadikan swap ? EX:4G";
+read sizeSwap
+sudo dd if=/dev/zero of=/swapfile bs=$sizeSwap count=4
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+#vi /etc/fstab
+echo " Harap tambahkan parameter ini agar swap otomatis nyala ketika restart add di /etc/fstab /swapfile swap swap defaults 0 0"

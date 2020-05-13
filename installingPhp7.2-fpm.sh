@@ -73,3 +73,4 @@ echo "Thanks Bye..."
 sleep 5s
 echo "Your IP server is $(curl icanhazip.com)"
 sudo service apache2 start
+sudo update-alternatives --set php /usr/bin/php7.2

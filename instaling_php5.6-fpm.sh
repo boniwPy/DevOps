@@ -55,6 +55,7 @@ echo "wait a minutes, restart the apache service"
 #sleep 3s
 for i in {5..1};do echo -n "$i." && sleep 1; done
 sudo service apache2 graceful
+sudo update-alternatives --set php /usr/bin/php5.6
 
 sudo echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
 sudo a2dismod mpm_prefork 

@@ -4,3 +4,4 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 apt-get update -y
 apt-get install docker-ce -y
 apt install sudo -y
+sudo usermod -aG docker ${USER}
